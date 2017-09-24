@@ -1,0 +1,18 @@
+[Sun Sep 24 20:56:32 2017] Failed to listen on localhost:8181 (reason: Address already in use)
+[Sun Sep 24 20:56:51 2017] Failed to listen on localhost:8181 (reason: Address already in use)
+[Sun Sep 24 20:57:32 2017] 127.0.0.1:58458 [200]: /
+[Sun Sep 24 21:01:15 2017] 127.0.0.1:58468 [404]: /index.php/test/index/index
+[Sun Sep 24 21:01:51 2017] 127.0.0.1:58470 [200]: /index.php/index/test/index
+[Sun Sep 24 21:02:30 2017] 127.0.0.1:58472 [404]: /index.php/index/dtest/index
+[Sun Sep 24 21:02:34 2017] 127.0.0.1:58476 [200]: /index.php/index/test/index
+[Sun Sep 24 21:52:49 2017] 127.0.0.1:59572 [404]: / - No such file or directory
+[Sun Sep 24 21:52:49 2017] 127.0.0.1:59574 [404]: /favicon.ico - No such file or directory
+[Sun Sep 24 21:53:45 2017] 127.0.0.1:59576 [200]: /
+[Sun Sep 24 21:54:06 2017] 127.0.0.1:59586 [200]: /index.php/index/test/index
+[Sun Sep 24 21:57:14 2017] 127.0.0.1:59594 [200]: /index.php/index/test/index
+[Sun Sep 24 21:57:16 2017] 127.0.0.1:59596 [200]: /index.php/index/test/index
+[Sun Sep 24 21:57:16 2017] 127.0.0.1:59598 [200]: /index.php/index/test/index
+[Sun Sep 24 21:57:19 2017] 127.0.0.1:59600 [200]: /
+[Sun Sep 24 21:59:52 2017] 127.0.0.1:59610 [200]: /
+[Sun Sep 24 22:07:53 2017] 127.0.0.1:59946 [200]: /
+[Sun Sep 24 22:20:47 2017] 127.0.0.1:60064 [200]: /admin/index/test
