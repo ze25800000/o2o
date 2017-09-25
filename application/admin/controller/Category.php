@@ -5,12 +5,18 @@ namespace app\admin\controller;
 use think\Controller;
 
 class Category extends Controller {
+    private $obj;
+
+    public function _initialize() {
+        $this->obj = model("Category");
+    }
+
     public function index() {
         return $this->fetch();
     }
 
     public function add() {
-        $categorys = model('Category')->getNormalFirstCategory();
+        $categorys = $this->obj->getNormalFirstCategory();
         return $this->fetch('', [
             'categorys' => $categorys
         ]);
@@ -22,7 +28,7 @@ class Category extends Controller {
         if (!$validate->scene('add')->check($data)) {
             $this->error($validate->getError());
         }
-        $res = model('Category')->add($data);
+        $res =$this->obj->add($data);
         if ($res) {
             $this->success('新增成功');
         } else {
