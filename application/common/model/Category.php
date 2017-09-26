@@ -23,4 +23,18 @@ class Category extends Model {
             ->order($order)
             ->select();
     }
+
+    public function getFirstCategorys($parentId = 0) {
+        $data = [
+            'parent_id' => $parentId,
+            'status'    => ['neq', -1]//不等于-1
+        ];
+        $order = [
+            'id' => 'desc'
+        ];
+        $result = $this->where($data)
+            ->order($order)
+            ->paginate(1);
+        return $result;
+    }
 }
