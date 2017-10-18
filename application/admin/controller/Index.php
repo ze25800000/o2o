@@ -13,6 +13,10 @@ class Index extends Controller {
         \Map::getLngLat('锡林浩特市西苑小区');
     }
 
+    public function map() {
+        return \Map::staticimage('锡林浩特市西苑小区');
+    }
+
     public function welcome() {
         return "hello world";
     }
