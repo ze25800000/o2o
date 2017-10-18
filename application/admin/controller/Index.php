@@ -9,6 +9,10 @@ class Index extends Controller {
         return $this->fetch();
     }
 
+    public function test() {
+        \Map::getLngLat('锡林浩特市西苑小区');
+    }
+
     public function welcome() {
         return "hello world";
     }
