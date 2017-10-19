@@ -18,6 +18,7 @@ class Index extends Controller {
     }
 
     public function welcome() {
-        return "hello world";
+        dump(\phpmailer\Email::send('1726249137@qq.com', 'o2o_tp5', 'hello world fuck the world'));
+        return "邮件发送成功";
     }
 }
