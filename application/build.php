@@ -22,17 +22,21 @@ return [
 //        'view'       => ['index/index'],
 //    ],
     // 其他更多的模块定义
-    'common' => [
+    'common'   => [
         '__dir__' => ['model'],
-        'model' => ['Category', 'Admin'],
+        'model'   => ['Category', 'Admin'],
     ],
-    'admin' => [
-        '__dir__' => ['controller', 'view'],
+    'admin'    => [
+        '__dir__'    => ['controller', 'view'],
         'controller' => ['Index'],
-        'view' => ['index/index'],
+        'view'       => ['index/index'],
     ],
-    'api' => [
-        '__dir__' => ['controller', 'view'],
+    'api'      => [
+        '__dir__'    => ['controller', 'view'],
         'controller' => ['Index', 'Image']
+    ],
+    'bis'      => [
+        '__dir__'    => ['controller', 'view'],
+        'controller' => ['Register', 'Login']
     ]
 ];

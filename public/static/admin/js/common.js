@@ -31,9 +31,21 @@ $('.listorder input').blur(function () {
     var url = SCOPE.listorder_url;
     $.post(url, postData, function (result) {
         if (result.code == 1) {
-            location.href=result.data
-        }else {
+            location.href = result.data
+        } else {
             alert(result.msg)
         }
-    })
+    }, "json");
+});
+/*城市相关二级内容*/
+$(".cityId").change(function () {
+    var city_id = $(this).val();
+    //抛出请求
+    var url = SCOPE.city_url;
+    var postData = {
+        'id': city_id
+    };
+    $.post(url, postData, function (result) {
+
+    }, 'json');
 });
