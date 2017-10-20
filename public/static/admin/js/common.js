@@ -46,6 +46,40 @@ $(".cityId").change(function () {
         'id': city_id
     };
     $.post(url, postData, function (result) {
+        if (result.status == 1) {
+            //将信息填充到HTML
+            var data = result.data;
+            var city_html = "";
+            $(data).each(function (i) {
+                city_html += "<option value='" + this.id + "'>" + this.name + "</option>";
+            });
+            $('.se_city_id').html(city_html);
+        }else if (result.status == 0) {
+            $('.se_city_id').html('');
+        }
+    }, 'json');
+});
 
+/*分类相关二级内容*/
+$(".categoryId").change(function () {
+    var category_id = $(this).val();
+    //抛出请求
+    var url = SCOPE.category_url;
+    var postData = {
+        'id': category_id
+    };
+    $.post(url, postData, function (result) {
+        if (result.status == 1) {
+            //将信息填充到HTML
+            var data = result.data;
+            var category_html = "";
+            $(data).each(function (i) {
+                category_html += "<input name='se_category_id[]' type='checkbox' id='checkbox-moban' value='" + this.id + "'/>" + this.name;
+                category_html +='<label for="checkbox-moban">&nbsp;</label>'
+            });
+            $('.se_category_id').html(category_html);
+        }else if (result.status == 0) {
+            $('.se_category_id').html('');
+        }
     }, 'json');
 });

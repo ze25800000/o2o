@@ -25,16 +25,30 @@ class Category extends Model {
     }
 
     public function getFirstCategorys($parentId = 0) {
-        $data = [
+        $data   = [
             'parent_id' => $parentId,
             'status'    => ['neq', -1]//不等于-1
         ];
-        $order = [
+        $order  = [
             'id' => 'desc'
         ];
         $result = $this->where($data)
             ->order($order)
             ->paginate(10);
         return $result;
+    }
+
+    public function getNormalCategoryByParentId($parentId = 0) {
+        $data = [
+            'status'    => 1,
+            'parent_id' => $parentId
+        ];
+
+        $order = [
+            'id' => 'desc'
+        ];
+        return $this->where($data)
+            ->order($order)
+            ->select();
     }
 }
