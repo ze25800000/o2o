@@ -44,3 +44,13 @@ function doCurl($url, $type = 0, $data = []) {
     curl_close($ch);
     return $output;
 }
+
+/**通用分页样式
+ * @param $obj
+ */
+function pagination($obj) {
+    if (!$obj) {
+        return '';
+    }
+    return '<div class="cl pd-5 bg-1 bk-gray mt-20 tp5-o2o">'.$obj->render().'</div>';
+}

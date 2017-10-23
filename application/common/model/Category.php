@@ -34,7 +34,7 @@ class Category extends Model {
         ];
         $result = $this->where($data)
             ->order($order)
-            ->paginate(10);
+            ->paginate(2);
         return $result;
     }
 
