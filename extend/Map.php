@@ -18,7 +18,11 @@ class Map {
         //1,file_get_contents($url)
         //2,curl
         $result = doCurl($url);
-        return $result;
+        if ($result) {
+            return json_decode($result, true);
+        } else {
+            return [];
+        }
     }
 
     /**根据经纬度或者地址来获取百度地图
@@ -29,14 +33,14 @@ class Map {
         if (!$center) {
             return '';
         }
-        $data = [
+        $data   = [
             'ak'      => config('map.ak'),
             'width'   => config('map.width'),
             'height'  => config('map.height'),
             'center'  => $center,
             'markers' => $center,
         ];
-        $url  = config('map.baidu_map_url') . config('map.staticimage') . '?' . http_build_query($data);
+        $url    = config('map.baidu_map_url') . config('map.staticimage') . '?' . http_build_query($data);
         $result = doCurl($url);
         return $result;
     }
