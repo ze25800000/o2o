@@ -54,4 +54,11 @@ class Bis extends Controller {
             $this->error('失败');
         }
     }
+
+    public function index() {
+        $bis = $this->obj->getBisByStatus(1);
+        return $this->fetch('', [
+            'bis' => $bis
+        ]);
+    }
 }
