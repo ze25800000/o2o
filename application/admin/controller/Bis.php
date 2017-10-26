@@ -38,4 +38,20 @@ class Bis extends Controller {
             'accountData'  => $accountData
         ]);
     }
+
+    public function status() {
+        $data = input('get.');
+        /* $validate = validate('Bis');
+         if (!$validate->scene('status')->check($data)) {
+             $this->error($validate->getError());
+         }*/
+        $res      = $this->obj->save(['status' => $data['status'], ['id' => $data['id']]]);
+        $location = model('BisLocation')->save(['status' => $data['status']], ['bis_id' => $data['id'], 'is_main' => 1]);
+        $account  = model('BisAccount')->save(['status' => $data['status']], ['bis_id' => $data['id'], 'is_main' => 1]);
+        if ($res && $location && $account) {
+            $this->success('状态更新成功');
+        } else {
+            $this->error('失败');
+        }
+    }
 }
