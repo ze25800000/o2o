@@ -14,13 +14,13 @@ use think\Controller;
 class Base extends Controller {
     private $account;
 
-    public function _initialize() {
-        // 判断用户是否登录
-        $isLogin = $this->isLogin();
-        if (!$isLogin) {
-            $this->redirect(url('login/index'));
-        }
-    }
+//    public function _initialize() {
+//        // 判断用户是否登录
+//        $isLogin = $this->isLogin();
+//        if (!$isLogin) {
+//            $this->redirect(url('login/index'));
+//        }
+//    }
 
     public function isLogin() {
         $user = $this->getLoginUser();
