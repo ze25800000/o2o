@@ -52,5 +52,19 @@ function pagination($obj) {
     if (!$obj) {
         return '';
     }
-    return '<div class="cl pd-5 bg-1 bk-gray mt-20 tp5-o2o">'.$obj->render().'</div>';
+    return '<div class="cl pd-5 bg-1 bk-gray mt-20 tp5-o2o">' . $obj->render() . '</div>';
+}
+
+function getSeCityName($path) {
+    if (empty($path)) {
+        return '';
+    }
+    if (preg_match('/,/', $path)) {
+        $cityPath = explode(',', $path);
+        $cityId   = $cityPath[1];
+    } else {
+        $cityId = $path;
+    }
+    $city = model('City')->get($cityId);
+    return $city->name;
 }
