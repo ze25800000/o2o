@@ -24,7 +24,16 @@ class Login extends Controller {
             session('bisAccount', $ret, 'bis');
             $this->success('登录成功', url('index/index'));
         } else {
+            $account = session('bisAccount', '', 'bis');
+            if ($account && $account->id) {
+                $this->redirect(url('index/index'));
+            }
             return $this->fetch();
         }
+    }
+
+    public function logout() {
+        session(null, 'bis');
+        $this->redirect('login/index');
     }
 }
